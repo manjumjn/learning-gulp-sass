@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-ruby-sass'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    imagemin = require('gulp-imagemin');
 
 function errorLog(error){
     console.error.bind(error);
@@ -24,6 +25,15 @@ gulp.task('styles', function(){
     .on('error', errorLog)
     .pipe(gulp.dest('css/'))
     .pipe(livereload());
+});
+
+//image task
+//compress
+gulp.task('image', function(){
+    gulp.src('images/*')
+        .on('error', errorLog)
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/img'));
 });
 
 //watch task

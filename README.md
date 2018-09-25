@@ -12,6 +12,8 @@ This repo contains gulp code tutorials for beginners, for tutorials please check
 * [4. Watching Files With Gulp](https://github.com/raunakhajela/learning-gulp-sass/commit/ffe01a438139122d85ef8121ca595811306f8b30)
 * [5. Compiling Sass With Gulp](https://github.com/raunakhajela/learning-gulp-sass/commit/b84b06c0d2faf50f629e301ce16c640e7e268b6e)
 * [6. Running Gulp With Plumber](https://github.com/raunakhajela/learning-gulp-sass/commit/747bc836acd11356c454e5306c686d3bd770b6f7)
+* [7. Handling Errors Without Plumber](https://github.com/raunakhajela/learning-gulp-sass/commit/79d559c6093afab26ac6aadec4c23d1d995c42ce)
+* [8. LiveReload With Gulp](https://github.com/raunakhajela/learning-gulp-sass/commit/d805d9519c5ee6ed4740de625b0cafd668fb7bb3)
 * [Twitter](https://twitter.com/raunakhajela)
 * [Facebook](https://facebook.com/raunakhajela)
 

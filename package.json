@@ -8,7 +8,9 @@
     "gulp-livereload": "^4.0.0"
   },
   "devDependencies": {
+    "@types/gulp-imagemin": "^4.1.1",
     "gulp": "^3.9.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.2.0",
     "gulp-ruby-sass": "^3.0.0",
     "gulp-uglify": "^3.0.1"
