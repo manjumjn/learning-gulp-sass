@@ -5,8 +5,8 @@ $colors: (
     accent: #FFF6BB
 );
 
-$padding: 15px; 
-$borders: 15px;
+$padding: 16px; 
+$borders: 16px;
 
 @function color($color-name) {
     @return map-get($colors, $color-name)

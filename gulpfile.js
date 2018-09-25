@@ -1,11 +1,14 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
-    sass = require('gulp-ruby-sass');
+    sass = require('gulp-ruby-sass'),
+    plumber = require('gulp-plumber');
 
+//preventing Gulp from stopping when encountering an error with Gulp Plumber
 //scripts task
 //uglifies
 gulp.task('scripts', function(){
     gulp.src('js/*.js')
+    .pipe(plumber())
     .pipe(uglify())
     .pipe(gulp.dest('build/js'));
 });
@@ -16,6 +19,7 @@ gulp.task('scripts', function(){
 //this technique is deprecated
 // gulp.task('styles', function(){
 //     gulp.src('css/*.scss')
+//     .pipe(plumber())
 //     .pipe(sass({
 //         style: 'compressed'
 //     }))
@@ -24,6 +28,7 @@ gulp.task('scripts', function(){
 
 gulp.task('styles', function(){
     return sass('css/*.scss')
+    .pipe(plumber())
     .on('error', sass.logError)
     .pipe(gulp.dest('css/'));
 });
