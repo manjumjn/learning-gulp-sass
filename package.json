@@ -1,0 +1,15 @@
+{
+  "name": "learning-gulp-sass",
+  "version": "1.0.0",
+  "description": "This is the project based on the following tutorial:\r [Learn Sass in this Crash Course - Give your CSS Superpowers!](https://youtu.be/roywYSEPSvc)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
