@@ -1,13 +1,13 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
-    sass = require('gulp-ruby-sass');
+    sass = require('gulp-ruby-sass'),
+    livereload = require('gulp-livereload');
 
 function errorLog(error){
     console.error.bind(error);
     this.emit('end');
 }
 
-//preventing Gulp from stopping when encountering an error with Gulp Plumber
 //scripts task
 //uglifies
 gulp.task('scripts', function(){
@@ -19,33 +19,22 @@ gulp.task('scripts', function(){
 
 //styles task
 //uglifies
-
-//this technique is deprecated
-// gulp.task('styles', function(){
-//     gulp.src('css/*.scss')
-//     .pipe(sass({
-//         style: 'compressed'
-//     }))
-//     .pipe(gulp.dest('css/'));
-// });
-
 gulp.task('styles', function(){
-    return sass('css/main.scss')
+    return sass('css/*.scss')
     .on('error', errorLog)
-    .pipe(gulp.dest('css/'));
+    .pipe(gulp.dest('css/'))
+    .pipe(livereload());
 });
 
 //watch task
 //watches js and then run 'scripts' task
 gulp.task('watch', function(){
-    gulp.watch('js/*.js', ['scripts']);
 
-    //if any .scss file is modified run 'styles' task
+    var server = livereload();
+
+    gulp.watch('js/*.js', ['scripts']);
     gulp.watch('css/*.scss', ['styles']);
 });
 
 //this task is responsible for executing all the tasks
 gulp.task('default', ['scripts', 'styles', 'watch']);
-
-//to run the specific gulpfile simple type 'gulp [filename]' e.g gulp scripts
-// to run all the tasks just type 'gulp'
