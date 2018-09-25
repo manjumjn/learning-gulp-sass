@@ -1,15 +1,22 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify');
 
-//'default' is a task name
-//minifying js files and saving them in minjs folder
-gulp.task('default', function(){
-    console.log('Hello Gulp');
-
-    //loading the files and save them to minjs
+//scripts task
+//uglifies
+gulp.task('scripts', function(){
     gulp.src('js/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('minjs'));
+    .pipe(gulp.dest('build/js'));
 });
 
-//to run the gulpfile simple type 'gulp' in console, it will automatically look for gulp file and run a task
+//styles task
+//uglifies
+gulp.task('styles', function(){
+    console.log('run styles');
+});
+
+//this task is responsible for executing all the tasks
+gulp.task('default', ['scripts', 'styles']);
+
+//to run the specific gulpfile simple type 'gulp [filename]' e.g gulp scripts
+// to run all the tasks just type 'gulp'
