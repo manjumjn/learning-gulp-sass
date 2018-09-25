@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "This is the project based on the following tutorial:\r [Learn Sass in this Crash Course - Give your CSS Superpowers!](https://youtu.be/roywYSEPSvc)",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "gem": "^2.4.3"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.2.0",
