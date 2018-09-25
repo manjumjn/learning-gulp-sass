@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-ruby-sass'),
     livereload = require('gulp-livereload'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    prefix = require('gulp-autoprefixer');
 
 function errorLog(error){
     console.error.bind(error);
@@ -22,7 +23,11 @@ gulp.task('scripts', function(){
 //uglifies
 gulp.task('styles', function(){
     return sass('css/*.scss')
+    .pipe(sass({
+        style: 'expanded'
+    }))
     .on('error', errorLog)
+    .pipe(prefix('lastt 2 versions'))
     .pipe(gulp.dest('css/'))
     .pipe(livereload());
 });

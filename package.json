@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "gem": "^2.4.3",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-livereload": "^4.0.0"
   },
   "devDependencies": {
