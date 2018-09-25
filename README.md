@@ -1,16 +1,15 @@
-# Sass Crash Course Project
+# Learning Gulp
 
-This is the project based on the following tutorial:
-[Learn Sass in this Crash Course - Give your CSS Superpowers!](https://youtu.be/roywYSEPSvc)
+This is the project based on the following tutorial: [Learning Gulp - LevelUpTuts](https://www.youtube.com/playlist?list=PLLnpHn493BHE2RsdyUNpbiVn-cfuV7Fos)
 
-## More Awesome Content
+This repo contains gulp code tutorials for beginners, for tutorials please check individual commits where I am leaving my personal notes as a comment.
 
-Do me a big ol' favor and check out these awesome links. I release new video tutorials on full stack development Monday-Thursday @ 10:30 AM ET!
+## Table of Contents
 
-* Subscribe to the [DesignCourse YouTube Channel](http://youtube.com/designcourse)
-* Check out the associated website [Coursetro Full Stack Development Training](https://coursetro.com)
-* Chat with me and others on Discord: [DesignCourse Discord Server](https://discord.gg/a27CKAF)
-* [Twitter](https://twitter.com/designcoursecom)
-* [Facebook](https://facebook.com/coursetro)
+* [1. Install and Greetings](https://github.com/raunakhajela/learning-gulp-sass/commit/fd02def2197a38e6f93d723a92ea07d8b13addc8)
+* [2. Using Plugins & Minifying JavaScript](https://coursetro.com)
+* [3. Named Tasks](https://discord.gg/a27CKAF)
+* [Twitter](https://twitter.com/raunakhajela)
+* [Facebook](https://facebook.com/raunakhajela)
 
 Enjoy!

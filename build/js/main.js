@@ -1,1 +1,1 @@
-console.log("Zoomzoom js files go here");
+console.log("ZoomZoom js files go here");
