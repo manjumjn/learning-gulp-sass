@@ -15,6 +15,7 @@ This repo contains gulp code tutorials for beginners, for tutorials please check
 * [7. Handling Errors Without Plumber](https://github.com/raunakhajela/learning-gulp-sass/commit/79d559c6093afab26ac6aadec4c23d1d995c42ce)
 * [8. LiveReload With Gulp](https://github.com/raunakhajela/learning-gulp-sass/commit/d805d9519c5ee6ed4740de625b0cafd668fb7bb3)
 * [9. Easy Image Compression](https://github.com/raunakhajela/learning-gulp-sass/commit/58f1a28a92739c46582e4b9859bc414f21419ffb)
+* [10. Automatic Browser Prefixing](https://github.com/raunakhajela/learning-gulp-sass/commit/a48ee55b1c352c12493951cedb73538f1186f5f0)
 * [Twitter](https://twitter.com/raunakhajela)
 * [Facebook](https://facebook.com/raunakhajela)
 
