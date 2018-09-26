@@ -19,4 +19,6 @@ This repo contains gulp code tutorials for beginners, for tutorials please check
 * [Twitter](https://twitter.com/raunakhajela)
 * [Facebook](https://facebook.com/raunakhajela)
 
+**Note:** Few modules are deprecated and updated so you might get error in running certain modules.
+
 Enjoy!
