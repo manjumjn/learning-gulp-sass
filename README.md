@@ -1,6 +1,6 @@
 # Learning Gulp
 
-This is the project based on the following tutorial: [Learning Gulp - LevelUpTuts](https://www.youtube.com/playlist?list=PLLnpHn493BHE2RsdyUNpbiVn-cfuV7Fos)
+This is the project based on the following tutorial: [Learning Gulp - LevelUpTuts](https://www.youtube.com/playlist?list=PLLnpHn493BHE2RsdyUNpbiVn-cfuV7Fos) and [The Web Designer’s Guide to Gulp - Tutsplus](https://webdesign.tutsplus.com/courses/the-web-designers-guide-to-gulp/lessons/loading-gulp-plugins-and-creating-the-default-task)
 
 This repo contains gulp code tutorials for beginners, for tutorials please check individual commits where I am leaving my personal notes as a comment.
 

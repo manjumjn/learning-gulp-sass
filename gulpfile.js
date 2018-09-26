@@ -1,55 +1,83 @@
+/** ===========================================================================
+ *
+ * Gulp configuration file.
+ *
+ * ========================================================================= */
+
+
+
+
+ 'use strict';
+
+
+
+ 
+/** ---------------------------------------------------------------------------
+ * Load plugins.
+ * ------------------------------------------------------------------------- */
+
 var gulp = require('gulp'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-ruby-sass'),
-    livereload = require('gulp-livereload'),
-    imagemin = require('gulp-imagemin'),
-    prefix = require('gulp-autoprefixer');
+    browser = require('browser-sync').create();
 
-function errorLog(error){
-    console.error.bind(error);
-    this.emit('end');
-}
 
-//scripts task
-//uglifies
-gulp.task('scripts', function(){
-    gulp.src('js/*.js')
-    .on('error', errorLog)
-    .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
+ 
+
+
+/** ---------------------------------------------------------------------------
+ * Regular tasks.
+ * ------------------------------------------------------------------------- */
+
+// Create a server with BrowserSync and watch for file changes.
+gulp.task('server', function() {
+    browser.init({
+        // Inject CSS changes without the page being reloaded.
+        injectChanges: true,
+
+        // What to serve.
+        server: {
+            baseDir: "dist"
+        },
+
+        // The port.
+        port: 1234
+
+        // For a complete list of options, visit: https://www.browsersync.io/docs/options
+    });
+
+    // Watch for file changes.
+    gulp.watch('src/*.html', ['watch-html']);
+
 });
 
-//styles task
-//uglifies
-gulp.task('styles', function(){
-    return sass('css/*.scss')
-    .pipe(sass({
-        style: 'expanded'
-    }))
-    .on('error', errorLog)
-    .pipe(prefix('lastt 2 versions'))
-    .pipe(gulp.dest('css/'))
-    .pipe(livereload());
+// Copies HTML from src to dist.
+gulp.task('html', function() {
+    return gulp
+        .src('src/*.html')
+        .pipe(gulp.dest('dist'));
 });
 
-//image task
-//compress
-gulp.task('image', function(){
-    gulp.src('images/*')
-        .on('error', errorLog)
-        .pipe(imagemin())
-        .pipe(gulp.dest('build/img'));
+
+
+
+
+
+/** ---------------------------------------------------------------------------
+ * Watch tasks.
+ * ------------------------------------------------------------------------- */
+
+// HTML.
+// this is 'watch-html' task but run it after you run the 'html' task
+gulp.task('watch-html', ['html'], function(done) {
+    browser.reload();
+    done();
 });
 
-//watch task
-//watches js and then run 'scripts' task
-gulp.task('watch', function(){
 
-    var server = livereload();
 
-    gulp.watch('js/*.js', ['scripts']);
-    gulp.watch('css/*.scss', ['styles']);
-});
 
-//this task is responsible for executing all the tasks
-gulp.task('default', ['scripts', 'styles', 'watch']);
+
+/** ---------------------------------------------------------------------------
+ * The main task.
+ * ------------------------------------------------------------------------- */
+
+ gulp.task('default', ['server']);
