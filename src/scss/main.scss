@@ -1,9 +1,4 @@
-$colors: (
-    primary: #005DFF,
-    primary-light: lighten(#005DFF, 40%),
-    primary-dark: darken(#005DFF, 40%),
-    accent: rgb(255, 221, 2)
-);
+@import 'settings';
 
 $padding: 16px;
 $borders: 16px;

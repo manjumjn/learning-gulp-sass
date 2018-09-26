@@ -17,7 +17,8 @@
  * ------------------------------------------------------------------------- */
 
 var gulp = require('gulp'),
-    browser = require('browser-sync').create();
+    browser = require('browser-sync').create(),
+    sass = require('gulp-sass');
 
 
  
@@ -46,6 +47,7 @@ gulp.task('server', function() {
 
     // Watch for file changes.
     gulp.watch('src/*.html', ['watch-html']);
+    gulp.watch('src/scss/**/*.scss', ['sass']);
 
 });
 
@@ -56,7 +58,18 @@ gulp.task('html', function() {
         .pipe(gulp.dest('dist'));
 });
 
-
+// Compiles Sass to CSS.
+gulp.task('sass', function() {
+    return gulp
+        .src('src/scss/**/*.scss')
+        .pipe(sass({
+            // Sass related options go here.
+            // See more options here: https://github.com/sass/node-sass#options
+            outputStyle: 'expanded'
+        }))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browser.stream()); //for browser reloading
+});
 
 
 
@@ -80,4 +93,4 @@ gulp.task('watch-html', ['html'], function(done) {
  * The main task.
  * ------------------------------------------------------------------------- */
 
- gulp.task('default', ['server']);
+ gulp.task('default', ['html', 'sass', 'server']);
