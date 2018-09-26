@@ -18,7 +18,10 @@
 
 var gulp = require('gulp'),
     browser = require('browser-sync').create(),
-    sass = require('gulp-sass');
+    autoprefixer = require('gulp-autoprefixer'),
+    sass = require('gulp-sass'),
+    minifyJS = require('gulp-uglify'),
+    concatJS = require('gulp-concat');
 
 
  
@@ -48,7 +51,7 @@ gulp.task('server', function() {
     // Watch for file changes.
     gulp.watch('src/*.html', ['watch-html']);
     gulp.watch('src/scss/**/*.scss', ['sass']);
-
+    gulp.watch('src/js/lib/**/*.js', ['watch-js']);
 });
 
 // Copies HTML from src to dist.
@@ -65,13 +68,25 @@ gulp.task('sass', function() {
         .pipe(sass({
             // Sass related options go here.
             // See more options here: https://github.com/sass/node-sass#options
-            outputStyle: 'expanded'
+            outputStyle: 'expanded' //use 'compressed' to minify css
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie 6-8']
         }))
         .pipe(gulp.dest('dist/css'))
         .pipe(browser.stream()); //for browser reloading
 });
 
-
+// Concatenate and minify JS.
+gulp.task('js', function() {
+    return gulp
+        .src('src/js/lib/**/*.js')
+        .pipe(concatJS('scripts.js'))
+        .pipe(minifyJS({
+            // For options visit: https://github.com/mishoo/UglifyJS2#minify-options
+        }))
+        .pipe(gulp.dest('dist/js'));
+});
 
 
 /** ---------------------------------------------------------------------------
@@ -85,7 +100,11 @@ gulp.task('watch-html', ['html'], function(done) {
     done();
 });
 
-
+// JS.
+gulp.task('watch-js', ['js'], function(done) {
+    browser.reload();
+    done();
+});
 
 
 
