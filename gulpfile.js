@@ -21,7 +21,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     minifyJS = require('gulp-uglify'),
-    concatJS = require('gulp-concat');
+    concatJS = require('gulp-concat'),
+    jshint = require('gulp-jshint');
 
 
  
@@ -78,7 +79,7 @@ gulp.task('sass', function() {
 });
 
 // Concatenate and minify JS.
-gulp.task('js', function() {
+gulp.task('js', ['lint-js'], function() {
     return gulp
         .src('src/js/lib/**/*.js')
         .pipe(concatJS('scripts.js'))
@@ -87,6 +88,18 @@ gulp.task('js', function() {
         }))
         .pipe(gulp.dest('dist/js'));
 });
+
+// Check JS code for errors.
+gulp.task('lint-js', function() {
+    return gulp
+        .src('src/js/lib/**/*.js')
+        .pipe(jshint()) // gulp jshint plugin requires normal npm jshint plugin to be installed
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('fail')); // task fails on JSHint error; 
+});
+
+
+
 
 
 /** ---------------------------------------------------------------------------
