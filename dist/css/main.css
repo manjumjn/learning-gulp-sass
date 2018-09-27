@@ -1,3 +1,200 @@
+.icon {
+  font-size: 10px;
+}
+
+.icon:before {
+  content: ' ';
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-repeat: no-repeat;
+  background-size: 3.2em 96em;
+}
+
+.no-svg .icon:before {
+  background-image: url("../img/sprite.png");
+}
+
+.icon.art_palette:before {
+  background-position: 0em 0em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.book:before {
+  background-position: 0em -3.2em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.brush:before {
+  background-position: 0em -6.4em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.brush_wide:before {
+  background-position: 0em -9.6em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.bulletin_board:before {
+  background-position: 0em -12.8em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.camera:before {
+  background-position: 0em -16em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.clip:before {
+  background-position: 0em -19.2em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.cloud:before {
+  background-position: 0em -22.4em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.coffe:before {
+  background-position: 0em -25.6em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.device:before {
+  background-position: 0em -28.8em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.dropper:before {
+  background-position: 0em -32em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.eraser:before {
+  background-position: 0em -35.2em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.folder:before {
+  background-position: 0em -38.4em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.fountain_pen:before {
+  background-position: 0em -41.6em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.graphic_design:before {
+  background-position: 0em -44.8em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.headphones:before {
+  background-position: 0em -48em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.image:before {
+  background-position: 0em -51.2em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.laptop:before {
+  background-position: 0em -54.4em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.lightbulb_idea:before {
+  background-position: 0em -57.6em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.monitor:before {
+  background-position: 0em -60.8em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.pencil:before {
+  background-position: 0em -64em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.pencil_tip:before {
+  background-position: 0em -67.2em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.product:before {
+  background-position: 0em -70.4em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.ruler:before {
+  background-position: 0em -73.6em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.sunglasses:before {
+  background-position: 0em -76.8em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.tablet:before {
+  background-position: 0em -80em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.thumbs_down:before {
+  background-position: 0em -83.2em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.thumbs_up:before {
+  background-position: 0em -86.4em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.watermark:before {
+  background-position: 0em -89.6em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.icon.zoom:before {
+  background-position: 0em -92.8em;
+  width: 3.2em;
+  height: 3.2em;
+}
+
 body, html {
   height: 100%;
 }

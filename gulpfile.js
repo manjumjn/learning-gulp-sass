@@ -23,7 +23,8 @@ var gulp = require('gulp'),
     minifyJS = require('gulp-uglify'),
     concatJS = require('gulp-concat'),
     jshint = require('gulp-jshint'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    svgSprites = require('gulp-svg-sprites');
 
 
  
@@ -55,6 +56,8 @@ gulp.task('server', function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch('src/js/lib/**/*.js', ['watch-js']);
     gulp.watch(['src/img/**/*.{png,jpg,gif,svg,ico}', '!src/img/sprites/**'], ['watch-img']);
+    gulp.watch('src/img/sprites/**', ['sprites']);
+
 });
 
 // Copies HTML from src to dist.
@@ -110,6 +113,23 @@ gulp.task('img',  function() {
         .pipe(gulp.dest('dist/img'));
 });
 
+// Creates sprites from SVG files.
+gulp.task('sprites', function() {
+    return gulp
+        .src('src/img/sprites/**/*.svg')
+        .pipe(svgSprites({
+            cssFile: 'scss/_sprites.scss',
+            templates: {
+                scss: true //it will generate scss code instead of css
+            },
+            preview: false, //disable sprite.html from generating
+            svg: {
+                sprite: 'img/sprite.svg'
+            }
+        }))
+        .pipe(gulp.dest('src'));
+});
+
 
 
 
@@ -145,4 +165,4 @@ gulp.task('watch-img', ['img'], function(done){
  * The main task.
  * ------------------------------------------------------------------------- */
 
- gulp.task('default', ['html', 'sass', 'js', 'img', 'server']);
+ gulp.task('default', ['html', 'sass', 'js', 'sprites', 'img', 'server']);

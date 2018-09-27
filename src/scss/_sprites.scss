@@ -1,0 +1,410 @@
+.icon {
+    font-size: 10px;
+    &:before {
+      content:' ';
+      vertical-align:middle;
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-repeat: no-repeat;
+      background-size: 3.2em 96em;
+
+      .no-svg & {
+        background-image: url("../img/sprite.png");
+      }
+    }
+}
+
+
+
+
+.icon.art_palette {
+  &:before {
+      background-position: 0em 0em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-art_palette(){
+    @extend .art_palette;
+  }
+
+
+.icon.book {
+  &:before {
+      background-position: 0em -3.2em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-book(){
+    @extend .book;
+  }
+
+
+.icon.brush {
+  &:before {
+      background-position: 0em -6.4em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-brush(){
+    @extend .brush;
+  }
+
+
+.icon.brush_wide {
+  &:before {
+      background-position: 0em -9.6em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-brush_wide(){
+    @extend .brush_wide;
+  }
+
+
+.icon.bulletin_board {
+  &:before {
+      background-position: 0em -12.8em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-bulletin_board(){
+    @extend .bulletin_board;
+  }
+
+
+.icon.camera {
+  &:before {
+      background-position: 0em -16em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-camera(){
+    @extend .camera;
+  }
+
+
+.icon.clip {
+  &:before {
+      background-position: 0em -19.2em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-clip(){
+    @extend .clip;
+  }
+
+
+.icon.cloud {
+  &:before {
+      background-position: 0em -22.4em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-cloud(){
+    @extend .cloud;
+  }
+
+
+.icon.coffe {
+  &:before {
+      background-position: 0em -25.6em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-coffe(){
+    @extend .coffe;
+  }
+
+
+.icon.device {
+  &:before {
+      background-position: 0em -28.8em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-device(){
+    @extend .device;
+  }
+
+
+.icon.dropper {
+  &:before {
+      background-position: 0em -32em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-dropper(){
+    @extend .dropper;
+  }
+
+
+.icon.eraser {
+  &:before {
+      background-position: 0em -35.2em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-eraser(){
+    @extend .eraser;
+  }
+
+
+.icon.folder {
+  &:before {
+      background-position: 0em -38.4em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-folder(){
+    @extend .folder;
+  }
+
+
+.icon.fountain_pen {
+  &:before {
+      background-position: 0em -41.6em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-fountain_pen(){
+    @extend .fountain_pen;
+  }
+
+
+.icon.graphic_design {
+  &:before {
+      background-position: 0em -44.8em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-graphic_design(){
+    @extend .graphic_design;
+  }
+
+
+.icon.headphones {
+  &:before {
+      background-position: 0em -48em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-headphones(){
+    @extend .headphones;
+  }
+
+
+.icon.image {
+  &:before {
+      background-position: 0em -51.2em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-image(){
+    @extend .image;
+  }
+
+
+.icon.laptop {
+  &:before {
+      background-position: 0em -54.4em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-laptop(){
+    @extend .laptop;
+  }
+
+
+.icon.lightbulb_idea {
+  &:before {
+      background-position: 0em -57.6em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-lightbulb_idea(){
+    @extend .lightbulb_idea;
+  }
+
+
+.icon.monitor {
+  &:before {
+      background-position: 0em -60.8em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-monitor(){
+    @extend .monitor;
+  }
+
+
+.icon.pencil {
+  &:before {
+      background-position: 0em -64em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-pencil(){
+    @extend .pencil;
+  }
+
+
+.icon.pencil_tip {
+  &:before {
+      background-position: 0em -67.2em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-pencil_tip(){
+    @extend .pencil_tip;
+  }
+
+
+.icon.product {
+  &:before {
+      background-position: 0em -70.4em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-product(){
+    @extend .product;
+  }
+
+
+.icon.ruler {
+  &:before {
+      background-position: 0em -73.6em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-ruler(){
+    @extend .ruler;
+  }
+
+
+.icon.sunglasses {
+  &:before {
+      background-position: 0em -76.8em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-sunglasses(){
+    @extend .sunglasses;
+  }
+
+
+.icon.tablet {
+  &:before {
+      background-position: 0em -80em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-tablet(){
+    @extend .tablet;
+  }
+
+
+.icon.thumbs_down {
+  &:before {
+      background-position: 0em -83.2em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-thumbs_down(){
+    @extend .thumbs_down;
+  }
+
+
+.icon.thumbs_up {
+  &:before {
+      background-position: 0em -86.4em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-thumbs_up(){
+    @extend .thumbs_up;
+  }
+
+
+.icon.watermark {
+  &:before {
+      background-position: 0em -89.6em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-watermark(){
+    @extend .watermark;
+  }
+
+
+.icon.zoom {
+  &:before {
+      background-position: 0em -92.8em;
+      width: 3.2em;
+      height: 3.2em;
+    }
+  }
+
+  @mixin icon-zoom(){
+    @extend .zoom;
+  }
+
+
+
