@@ -22,7 +22,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     minifyJS = require('gulp-uglify'),
     concatJS = require('gulp-concat'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    imagemin = require('gulp-imagemin');
 
 
  
@@ -53,6 +54,7 @@ gulp.task('server', function() {
     gulp.watch('src/*.html', ['watch-html']);
     gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch('src/js/lib/**/*.js', ['watch-js']);
+    gulp.watch(['src/img/**/*.{png,jpg,gif,svg,ico}', '!src/img/sprites/**'], ['watch-img']);
 });
 
 // Copies HTML from src to dist.
@@ -98,6 +100,16 @@ gulp.task('lint-js', function() {
         .pipe(jshint.reporter('fail')); // task fails on JSHint error; 
 });
 
+// Compresses images.
+gulp.task('img',  function() {
+    return gulp
+        .src(['src/img/**/*.{png,jpg,gif,svg,ico}', '!src/img/sprites/**']) //second parameter will ignore files which you don't want to move in dist folder 
+        .pipe(imagemin({
+            verbose: true
+        }))
+        .pipe(gulp.dest('dist/img'));
+});
+
 
 
 
@@ -119,10 +131,18 @@ gulp.task('watch-js', ['js'], function(done) {
     done();
 });
 
+// Images.
+gulp.task('watch-img', ['img'], function(done){
+    browser.reload();
+    done();
+});
+
+
+
 
 
 /** ---------------------------------------------------------------------------
  * The main task.
  * ------------------------------------------------------------------------- */
 
- gulp.task('default', ['html', 'sass', 'server']);
+ gulp.task('default', ['html', 'sass', 'js', 'img', 'server']);
