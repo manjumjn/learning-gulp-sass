@@ -25,7 +25,9 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     imagemin = require('gulp-imagemin'),
     svgSprites = require('gulp-svg-sprites'),
-    sequence = require('run-sequence'); //to run tasks in sequence not parallel
+    sequence = require('run-sequence'), //to run tasks in sequence not parallel
+    clean = require('gulp-clean'), //we will use it to delete dist folder 
+    rename = require('gulp-rename'); //we will use it to rename our scripts file 
 
 
  
@@ -89,9 +91,11 @@ gulp.task('js', ['lint-js'], function() {
     return gulp
         .src('src/js/lib/**/*.js')
         .pipe(concatJS('scripts.js'))
+        .pipe(gulp.dest('dist/js'))
         .pipe(minifyJS({
             // For options visit: https://github.com/mishoo/UglifyJS2#minify-options
         }))
+        .pipe(rename('scripts.min.js')) //we will rename it and then write in dist folder
         .pipe(gulp.dest('dist/js'));
 });
 
@@ -131,6 +135,13 @@ gulp.task('sprites', function() {
         .pipe(gulp.dest('src'));
 });
 
+// Deletes the dist folder so the build can start fresh.
+gulp.task('reset', function() {
+    return gulp
+        .src('dist')
+        .pipe(clean());
+});
+
 
 
 
@@ -167,5 +178,5 @@ gulp.task('watch-img', ['img'], function(done){
  * ------------------------------------------------------------------------- */
 
  gulp.task('default', function(cb){
-     sequence('html', 'sprites', ['sass', 'img', 'js'], 'server', cb); //to run tasks in parallel instead of sequence we put them in array
+     sequence('reset', 'html', 'sprites', ['sass', 'img', 'js'], 'server', cb); //to run tasks in parallel instead of sequence we put them in array
  });
