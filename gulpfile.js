@@ -27,7 +27,9 @@ var gulp = require('gulp'),
     svgSprites = require('gulp-svg-sprites'),
     sequence = require('run-sequence'), //to run tasks in sequence not parallel
     clean = require('gulp-clean'), //we will use it to delete dist folder 
-    rename = require('gulp-rename'); //we will use it to rename our scripts file 
+    rename = require('gulp-rename'), //we will use it to rename our scripts file 
+    plumber = require('gulp-plumber'), //handle errors
+    notify = require('gulp-notify'); //notify for errors
 
 
  
@@ -74,6 +76,12 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
     return gulp
         .src('src/scss/**/*.scss')
+        .pipe(plumber({
+            errorHandler: notify.onError({
+                title: 'Gulp error in the <%= error.plugin %> plugin',
+                message: '<%= error.message %>'
+            })
+        })) //on error it will show notification
         .pipe(sass({
             // Sass related options go here.
             // See more options here: https://github.com/sass/node-sass#options
