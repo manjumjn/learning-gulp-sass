@@ -24,7 +24,8 @@ var gulp = require('gulp'),
     concatJS = require('gulp-concat'),
     jshint = require('gulp-jshint'),
     imagemin = require('gulp-imagemin'),
-    svgSprites = require('gulp-svg-sprites');
+    svgSprites = require('gulp-svg-sprites'),
+    sequence = require('run-sequence'); //to run tasks in sequence not parallel
 
 
  
@@ -165,4 +166,6 @@ gulp.task('watch-img', ['img'], function(done){
  * The main task.
  * ------------------------------------------------------------------------- */
 
- gulp.task('default', ['html', 'sass', 'js', 'sprites', 'img', 'server']);
+ gulp.task('default', function(cb){
+     sequence('html', 'sprites', ['sass', 'img', 'js'], 'server', cb); //to run tasks in parallel instead of sequence we put them in array
+ });
